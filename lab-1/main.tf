@@ -5,13 +5,13 @@ module "rg" {
 
 }
 
-module "storage_account" {
+module "stg_account" {
     source = "../modules/storage_account"
     storage_account = {
 
 
       "stgacc" = {
-        name = "storage_account"
+        name = "stg_account"
         rg_name = module.rg.rg_nameout 
         location = module.rg.rg_locationout
         account_tier = "standard"
@@ -22,7 +22,7 @@ module "storage_account" {
             
         }
 
-        depends_on = [ module.rg ]
+        depends_on = [module.rg]
       } 
     
   
